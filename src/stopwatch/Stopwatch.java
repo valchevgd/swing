@@ -83,18 +83,6 @@ public class Stopwatch extends JFrame {
             }
         });
 
-        clearButton.setText("Clear");
-        gridBagConstraints.gridx = 1;
-        gridBagConstraints.gridy = 4;
-        getContentPane().add(clearButton, gridBagConstraints);
-        clearButton.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                clearButtonActionPerformed(e);
-            }
-        });
-        clearButton.setEnabled(false);
-
         startLabel.setText("Start Time");
         gridBagConstraints.gridx = 1;
         gridBagConstraints.gridy = 0;
@@ -129,6 +117,21 @@ public class Stopwatch extends JFrame {
         getContentPane().add(elapsedTextField, gridBagConstraints);
 
         getContentPane().setBackground(Color.GRAY);
+
+        clearButton.setText("Clear");
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 4;
+        gridBagConstraints.gridwidth = 3;
+        gridBagConstraints.fill = GridBagConstraints.HORIZONTAL;
+
+        getContentPane().add(clearButton, gridBagConstraints);
+        clearButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                clearButtonActionPerformed(e);
+            }
+        });
+        clearButton.setEnabled(false);
 
         pack();
     }
