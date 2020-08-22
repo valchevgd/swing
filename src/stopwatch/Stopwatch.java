@@ -116,14 +116,13 @@ public class Stopwatch extends JFrame {
         gridBagConstraints.gridy = 2;
         getContentPane().add(elapsedTextField, gridBagConstraints);
 
-        getContentPane().setBackground(Color.GRAY);
+        getContentPane().setBackground(new Color(229,187,173));
 
         clearButton.setText("Clear");
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 4;
         gridBagConstraints.gridwidth = 3;
         gridBagConstraints.fill = GridBagConstraints.HORIZONTAL;
-
         getContentPane().add(clearButton, gridBagConstraints);
         clearButton.addActionListener(new ActionListener() {
             @Override
@@ -134,6 +133,14 @@ public class Stopwatch extends JFrame {
         clearButton.setEnabled(false);
 
         pack();
+
+        Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
+        setBounds(
+                (int) (0.5 * (screenSize.width - getWidth())),
+                (int) (0.5 * (screenSize.height - getHeight())),
+                getWidth(),
+                getHeight()
+        );
     }
 
     private void startButtonActionPerformed(ActionEvent e) {
